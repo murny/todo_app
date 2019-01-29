@@ -1,24 +1,62 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
+ - Ruby v2.3.3
+ - Rails v5.2.2
+ - PostgreSQL
+ - Node.js
 
-Things you may want to cover:
+## Running Locally
 
-* Ruby version
+Clone down this repo:
+```shell
+git clone git@github.com:murny/todo_app.git
+```
 
-* System dependencies
+Navigate into it:
+```shell
+cd todo_app
+```
 
-* Configuration
+Install gems for project:
+```shell
+bundle install
+```
 
-* Database creation
+Create and setup the database:
+```shell
+rails db:create && rails db:migrate
+```
 
-* Database initialization
+Start the Rails server:
+```shell
+rails server
+```
 
-* How to run the test suite
+And now you can visit the site at http://localhost:3000
 
-* Services (job queues, cache servers, search engines, etc.)
+## Testing
+Run the test suite by executing the following:
+```shell
+bundle exec rails test
+```
 
-* Deployment instructions
+Run system tests:
+```shell
+bundle exec rails test:system
+```
 
-* ...
+Rubocop for linting:
+```shell
+bundle exec rubocop
+```
+
+
+## Deployment
+We use heroku for production. To deploy to heroku run the following:
+```shell
+heroku create
+git push heroku master
+heroku run rake db:migrate
+heroku open
+```
