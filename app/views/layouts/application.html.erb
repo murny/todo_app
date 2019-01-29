@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Todo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Todo App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +13,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render partial: 'navbar' %>
+
+    <main>
+      <%= render partial: 'flash' %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
