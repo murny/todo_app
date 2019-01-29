@@ -8,12 +8,12 @@ class TodosTest < ApplicationSystemTestCase
   end
 
   test 'visiting the index' do
-    visit todos_url
+    visit root_url
     assert_selector 'h1', text: 'Todos'
   end
 
   test 'creating a Todo' do
-    visit todos_url
+    visit root_url
     click_on 'New Todo'
 
     fill_in 'Title', with: @todo.title
@@ -24,7 +24,7 @@ class TodosTest < ApplicationSystemTestCase
   end
 
   test 'updating a Todo' do
-    visit todos_url
+    visit root_url
     click_on 'Edit', match: :first
 
     fill_in 'Title', with: @todo.title
@@ -35,7 +35,7 @@ class TodosTest < ApplicationSystemTestCase
   end
 
   test 'destroying a Todo' do
-    visit todos_url
+    visit root_url
     page.accept_confirm do
       click_on 'Delete', match: :first
     end

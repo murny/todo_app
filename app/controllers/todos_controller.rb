@@ -21,7 +21,7 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
 
     if @todo.save
-      redirect_to todos_url, notice: 'Todo was successfully created.'
+      redirect_to root_url, notice: 'Todo was successfully created.'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class TodosController < ApplicationController
   # PATCH/PUT /todos/1
   def update
     if @todo.update(todo_params)
-      redirect_to todos_url, notice: 'Todo was successfully updated.'
+      redirect_to root_url, notice: 'Todo was successfully updated.'
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class TodosController < ApplicationController
   # DELETE /todos/1
   def destroy
     @todo.destroy
-    redirect_to todos_url, notice: 'Todo was successfully destroyed.'
+    redirect_to root_url, notice: 'Todo was successfully destroyed.'
   end
 
   private
